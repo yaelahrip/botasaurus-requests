@@ -1,10 +1,7 @@
-# Botasaurus Requests
-
-[![PyPI version](https://badge.fury.io/py/botasaurus-requests.svg)](https://badge.fury.io/py/botasaurus-requests)
-
+# BotaRequests + Quart as a Service
 Botasaurus Requests is a stealth HTTP client for Python web scraping and crawling. It bypasses anti-bot systems (Cloudflare, Akamai, etc) without using a browser, by emulating real browser TLS and HTTP signatures. It is lightweight, cross-platform, and offers drop-in compatibility with `requests`.
 
-Forked from [hrequests](https://github.com/daijro/hrequests), Botasaurus Requests is streamlined, faster, and Windows/Mac/Linux friendly. It powers the Botasaurus anti-detect scraping ecosystem.
+Forked from [hrequests], Botasaurus Requests is streamlined, faster, and Windows/Mac/Linux friendly. It powers the Botasaurus anti-detect scraping ecosystem.
 
 ---
 
@@ -205,6 +202,13 @@ print(lazy_resp.text)  # blocks until response is ready
 * `.html.find(selector)` — built-in fast selectolax parser
 
 ---
+
+## How to run the server.py
+
+hypercorn main:app --bind 0.0.0.0:5000 --workers 4
+# or
+gunicorn main:app -k quart.worker --bind 0.0.0.0:5000 --workers 4
+
 
 ## 🏆 Best Practices & Tips
 
