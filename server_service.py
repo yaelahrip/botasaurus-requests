@@ -325,8 +325,11 @@ async def api_request():
         })
 
 # -------- Run --------
-if __name__ == "__main__":
+def main():
     import logging
     logging.basicConfig(level=logging.INFO)
     ssl_ctx = ("cert.crt", "cert.key")  # Paths to your cert and key
     app.run(host="0.0.0.0", port=5000, ssl_context=ssl_ctx)
+
+if __name__ == "__main__":
+    main()
